@@ -12,21 +12,18 @@ namespace InkedUp.Domain
                 throw new ArgumentException("Identity must be specified", nameof(id));
             
             Id = id;
-            _ownerId = ownerId;
+            OwnerId = ownerId;
         }
 
-        public void UpdateManufacturer(string manufacturer) => _manufacturer = manufacturer;
+        public void UpdateManufacturer(PenManufacturer manufacturer) => Manufacturer = manufacturer;
         
-        public void UpdateModel(string model) => _model = model;
-        
-        public void UpdatePhoto(string photo) => _photo = photo;
-        
-        public void InkUp(Ink ink) => _ink = ink;
+        public void UpdateModel(PenModel model) => Model = model;
 
-        private UserId _ownerId;
-        private string _manufacturer;
-        private string _model;
-        private string _photo;
-        private Ink _ink;
+        public void InkUp(PenInkName inkName) => InkName = inkName;
+
+        private UserId OwnerId { get;  }
+        public PenManufacturer Manufacturer { get; private set; }
+        public PenModel Model { get; private set; }
+        public PenInkName InkName { get; private set; }
     }
 }

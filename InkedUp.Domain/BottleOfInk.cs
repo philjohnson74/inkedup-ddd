@@ -1,5 +1,3 @@
-using System;
-
 namespace InkedUp.Domain
 {
     public class BottleOfInk
@@ -9,20 +7,17 @@ namespace InkedUp.Domain
         public BottleOfInk(BottleOfInkId id, UserId ownerId)
         {
             Id = id;
-            _ownerId = ownerId;
+            OwnerId = ownerId;
         }
 
-        public void UpdateManufacturer(string manufacturer) => _manufacturer = manufacturer;
+        public void UpdateManufacturer(BottleOfInkManufacturer manufacturer) => Manufacturer = manufacturer;
         
-        public void UpdateColour(string colour) => _colour = colour;
-        
-        public void UpdatePhoto(string photo) => _photo = photo;
-        
-        public string GetInkName() => $"{_manufacturer} - {_colour}";
+        public void UpdateColour(BottleOfInkColour colour) => Colour = colour;
 
-        private UserId _ownerId;
-        private string _manufacturer;
-        private string _colour;
-        private string _photo;
+        public string GetInkName() => $"{Manufacturer} - {Colour}";
+
+        public UserId OwnerId { get;  }
+        public BottleOfInkManufacturer Manufacturer { get; private set; }
+        public BottleOfInkColour Colour { get; private set; }
     }
 }
