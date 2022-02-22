@@ -5,9 +5,11 @@ namespace InkedUp.Domain
 {
     public class Ink : Value<Ink>
     {
+        public static Ink FromBottleOfInk(BottleOfInk bottleOfInk) => new Ink(bottleOfInk);
+
         public string Name { get;  }
 
-        public Ink(BottleOfInk bottleOfInk)
+        private Ink(BottleOfInk bottleOfInk)
         {
             if (bottleOfInk == null)
                 throw new ArgumentException("Bottle of ink must be specified", nameof(bottleOfInk));

@@ -13,9 +13,31 @@ namespace InkedUp.Tests
                 new BottleOfInkId(Guid.NewGuid()), 
                 new UserId(Guid.NewGuid())
                 );
-            Ink firstInk = new Ink(bottleOfInk);
-            Ink secondInk = new Ink(bottleOfInk);
+            Ink firstInk = Ink.FromBottleOfInk(bottleOfInk);
+            Ink secondInk = Ink.FromBottleOfInk(bottleOfInk);
+            
             Assert.Equal(firstInk, secondInk);
+        }
+        
+        [Fact]
+        public void Ink_name_is_taken_from_bottle_of_ink()
+        {
+            BottleOfInk bottleOfInk = new BottleOfInk(
+                new BottleOfInkId(Guid.NewGuid()), 
+                new UserId(Guid.NewGuid())
+            );
+            bottleOfInk.UpdateManufacturer("Montblanc");
+            bottleOfInk.UpdateColour("Irish Green");
+            
+            Ink ink = Ink.FromBottleOfInk(bottleOfInk);
+
+            Assert.Equal("Montblanc - Irish Green", ink.Name);
+        }
+        
+        [Fact]
+        public void Ink_needs_bottle_of_ink_to_be_dispensed_from()
+        { 
+            Assert.Throws<ArgumentException>(() => Ink.FromBottleOfInk(null));
         }
     }
 }
