@@ -18,5 +18,8 @@ namespace InkedUp.Domain
             
             Value = bottleOfInk.GetInkName();
         }
+        
+        public static implicit operator string(PenInkName text) =>
+            text.Value;
     }
 }

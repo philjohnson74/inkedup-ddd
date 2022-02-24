@@ -34,10 +34,10 @@ namespace InkedUp.Domain
             public string Manufacturer { get; set; }
         }
 
-        public class BottleOfInkModelUpdated
+        public class BottleOfInkColourUpdated
         {
             public Guid Id { get; set; }
-            public string Model { get; set; }
+            public string Colour { get; set; }
         }
 
         public class PenInkedUp
@@ -57,6 +57,11 @@ namespace InkedUp.Domain
         }
         
         public class PenDeleted
+        {
+            public Guid Id { get; set; }
+        }
+                
+        public class BottleOfInkDeleted
         {
             public Guid Id { get; set; }
         }

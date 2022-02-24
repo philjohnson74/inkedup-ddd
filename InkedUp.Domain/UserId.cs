@@ -3,16 +3,18 @@ using InkedUp.Framework;
 
 namespace InkedUp.Domain
 {
-    public class UserId : Value<UserId>
+    public class UserId
     {
-        private readonly Guid _value;
+        private Guid Value { get; set; }
 
         public UserId(Guid value)
         {
             if (value == default)
                 throw new ArgumentNullException(nameof(value), "User id cannot be empty");
-
-            _value = value;
+            
+            Value = value;
         }
+        
+        public static implicit operator Guid(UserId self) => self.Value;
     }
 }
