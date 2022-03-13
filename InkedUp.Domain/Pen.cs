@@ -39,12 +39,23 @@ namespace InkedUp.Domain
             });
         }
 
-        public void InkUp(BottleOfInk bottleOfInk)
+        public void InkUp(PenInkName penInkName)
         {
             Apply(new Events.PenInkedUp
             {
                 Id = Id,
-                InkName = PenInkName.FromBottleOfInk(bottleOfInk),
+                InkName = penInkName,
+            });
+        }
+        
+        public void InkUp(BottleOfInk bottleOfInk)
+        {
+            PenInkName penInkName = new PenInkName(bottleOfInk.GetInkName());
+            
+            Apply(new Events.PenInkedUp
+            {
+                Id = Id,
+                InkName = penInkName,
             });
         }
         

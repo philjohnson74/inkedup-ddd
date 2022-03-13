@@ -1,0 +1,184 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Api/InkedUp.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Api/InkedUp.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Api/InkedUp.Api.csproj",
+        "projectName": "InkedUp.Api",
+        "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Api/InkedUp.Api.csproj",
+        "packagesPath": "/Users/phillipjohnson/.nuget/packages/",
+        "outputPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phillipjohnson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/InkedUp.Domain.csproj": {
+                "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/InkedUp.Domain.csproj"
+              },
+              "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj": {
+                "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/InkedUp.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/InkedUp.Domain.csproj",
+        "projectName": "InkedUp.Domain",
+        "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/InkedUp.Domain.csproj",
+        "packagesPath": "/Users/phillipjohnson/.nuget/packages/",
+        "outputPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phillipjohnson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj": {
+                "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj",
+        "projectName": "InkedUp.Framework",
+        "projectPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/InkedUp.Framework.csproj",
+        "packagesPath": "/Users/phillipjohnson/.nuget/packages/",
+        "outputPath": "/Users/phillipjohnson/Projects/inkedup-ddd/InkedUp.Framework/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/phillipjohnson/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

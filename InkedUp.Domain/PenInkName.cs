@@ -9,6 +9,8 @@ namespace InkedUp.Domain
         
         internal PenInkName(string text) => Value = text;
         
+        public static PenInkName FromString(String inkName) => new PenInkName(inkName);
+        
         public static PenInkName FromBottleOfInk(BottleOfInk bottleOfInk) => new PenInkName(bottleOfInk);
 
         private PenInkName(BottleOfInk bottleOfInk)
