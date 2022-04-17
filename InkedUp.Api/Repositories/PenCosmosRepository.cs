@@ -12,10 +12,12 @@ namespace InkedUp.Api.Repositories
     public class PenCosmosRepository : IPenRepository
     {
         // The Azure Cosmos DB endpoint for running this sample.
-        private static readonly string EndpointUri = "https://[ENTER-YOUR-COSMOS-ACCOUNT-NAME-HERE]-cosmos.documents.azure.com:443/";
+        private static readonly string EndpointUri = 
+            "https://[ENTER-YOUR-COSMOS-ACCOUNT-NAME-HERE]-cosmos.documents.azure.com:443/";
 
         // The primary key for the Azure Cosmos account.
-        private static readonly string PrimaryKey = "[ENTER-YOUR-COSMOS-ACCOUNT-KEY-HERE]";
+        private static readonly string PrimaryKey = 
+            "[ENTER-YOUR-COSMOS-ACCOUNT-KEY-HERE]";
 
         // The name of the database and container
         private string _databaseId = "InkedUp";
@@ -29,7 +31,8 @@ namespace InkedUp.Api.Repositories
         
         public PenCosmosRepository()
         {
-            _cosmosClient = new CosmosClient(EndpointUri, PrimaryKey, new CosmosClientOptions() { ApplicationName = "InkedUp.Api" });
+            _cosmosClient = new CosmosClient(EndpointUri, PrimaryKey, 
+                new CosmosClientOptions() { ApplicationName = "InkedUp.Api" });
             _database = _cosmosClient.GetDatabase(_databaseId);
             _container = _database.GetContainer(_containerId);
         }
@@ -79,15 +82,18 @@ namespace InkedUp.Api.Repositories
                 eventStream.Events.Add(streamEvent);
             }
 
-            // Could possibly replace this whole if/else block with a single Upsert statement... one to look further into.
+            // Could possibly replace this whole if/else block with a single Upsert statement...
+            // one to look further into.
             if (await Exists(eventStream.Id, eventStream.OwnerId))
             {
                 // Replace the existing item
-                await _container.ReplaceItemAsync(eventStream, eventStream.Id, new PartitionKey(eventStream.OwnerId));
+                await _container.ReplaceItemAsync(eventStream, eventStream.Id, 
+                    new PartitionKey(eventStream.OwnerId));
             }
             else
             {
-                // Create an item in the container representing the Pen. Note we provide the value of the partition key for this item, which is the OwnerId
+                // Create an item in the container representing the Pen.
+                // Note we provide the value of the partition key for this item, which is the OwnerId
                await this._container.CreateItemAsync(eventStream, new PartitionKey(eventStream.OwnerId));
             }
         }
