@@ -22,6 +22,13 @@ namespace InkedUp.Api.Controllers
             await _applicationService.Handle(request);
             return Ok();
         }
+        
+        [HttpGet]
+        public async Task<IActionResult> Get(V1.Get request)
+        {
+            var pen = await _applicationService.HandleGet(request);
+            return new OkObjectResult(pen);
+        }
 
         [Route("manufacturer")]
         [HttpPut]

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace InkedUp.Framework
 {
@@ -15,6 +17,22 @@ namespace InkedUp.Framework
             When(@event);
             EnsureValidState();
             _events.Add(@event);
+        }
+
+        protected void LoadEventStream(EventStream eventStream)
+        {
+            foreach (var eventData in eventStream.Events)
+            {
+                var dataType = Type.GetType(eventData.Type);
+                var jsonData = Encoding.UTF8.GetString(eventData.Data);
+                var data = JsonConvert.DeserializeObject(jsonData, dataType);
+                
+                //  Add the event to the entities local cache of events
+                _events.Add(data);
+                
+                //  Apply the event
+                When(data);
+            }
         }
 
         protected abstract void When(object @event);

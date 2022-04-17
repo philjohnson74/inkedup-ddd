@@ -1,4 +1,3 @@
-using System;
 using InkedUp.Framework;
 
 namespace InkedUp.Domain
@@ -19,6 +18,11 @@ namespace InkedUp.Domain
                 Id = id,
                 OwnerId = ownerId
             });
+        }
+
+        public Pen(EventStream eventStream)
+        {
+            LoadEventStream(eventStream);
         }
 
         public void UpdateManufacturer(PenManufacturer manufacturer)

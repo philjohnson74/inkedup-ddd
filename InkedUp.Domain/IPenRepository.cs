@@ -4,9 +4,9 @@ namespace InkedUp.Domain
 {
     public interface IPenRepository
     {
-        Task<bool> Exists(PenId id);
+        Task<bool> Exists(string id, string ownerId);
 
-        Task<Pen> Load(PenId id);
+        Task<Pen> Load(string id, string ownerId);
 
         Task Save(Pen entity);
     }
